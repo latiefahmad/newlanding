@@ -12,7 +12,7 @@
   $(if refresh-timeout)
   <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
   $(endif)
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
   <link href="static\plugin\bootstrap\css\bootstrap.min.css" rel="stylesheet">
   <link href="static\plugin\font-awesome\css\fontawesome-all.min.css" rel="stylesheet">
   <link href="static\plugin\et-line\style.css" rel="stylesheet">
@@ -92,25 +92,6 @@
                     <td>$(bytes-out-nice) / $(bytes-in-nice)</td>
                   </tr>
                   $(if limit-bytes-total)
-                  <tr>
-                    <td>Sisa Kuota</td>
-                    <td>$(if limit-bytes-total)
-                      <script language=javascript>result = ($(limit - bytes - total) / 1000000).toFixed(2)
-                        document.write(result)</script> MiB
-                      $(endif)
-                      $(if limit-bytes-total == '')Unlimited$(endif)
-                    </td>
-                  </tr>
-                  $(else)
-                  <tr>
-                    <td>Sisa Kuota</td>
-                    <td>$(if limit-bytes-out)
-                      <script language=javascript>result = ($(limit - bytes - out) / 1000000).toFixed(2)
-                        document.write(result)</script> MiB
-                      $(endif)
-                      $(if limit-bytes-out == '')Unlimited$(endif)
-                    </td>
-                  </tr>
                   $(endif)
                   $(if refresh-timeout)
                   <tr>
